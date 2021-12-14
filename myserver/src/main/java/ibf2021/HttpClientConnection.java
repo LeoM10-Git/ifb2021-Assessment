@@ -3,24 +3,12 @@ package ibf2021;
 
 import java.io.*;
 import java.net.Socket;
-import java.net.URLDecoder;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.StringTokenizer;
 
 public class HttpClientConnection implements Runnable {
     private Socket socket;
     private DataOutputStream outToClient;
     private BufferedReader inFromClient;
-    static final String HTML_START =
-            "<html>" +
-                    "<title>HTTP Server in java</title>" +
-                    "<body>";
-
-    static final String HTML_END =
-            "</body>" +
-                    "</html>";
 
     public HttpClientConnection(Socket socket) {
         this.socket = socket;

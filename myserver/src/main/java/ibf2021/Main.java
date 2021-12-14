@@ -11,22 +11,13 @@ public class Main {
 
 
     public static void main(String[] args) throws IOException {
-        if (args != null && args.length > 1) {
-            if ("--port".equals(args[0])){
-                String port = args[1];
-                HttpServer httpServer = new HttpServer(port);
+        String userPort = "3000";
+        if (args != null && args.length > 0) {
+            if ("--port".equals(args[0]) && args.length < 2) {
+                userPort = args[1];
             }
         }
-        System.out.println(args[0]);
-        ExecutorService threadPool = Executors.newFixedThreadPool(3);
-        System.out.println("Listen to port 3000: ");
-        int defaultPort = 3000;
-        ServerSocket server = new ServerSocket(defaultPort);
-
-        while (true) {
-            Socket socket = server.accept();
-            HttpClientConnection httpClientConnection = new HttpClientConnection(socket);
-            threadPool.submit(httpClientConnection);
-        }
+        HttpServer httpServer = new HttpServer(userPort);
+        httpServer.startServer();
     }
 }
