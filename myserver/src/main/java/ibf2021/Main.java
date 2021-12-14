@@ -9,9 +9,9 @@ import java.util.concurrent.Executors;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-//        if (args != null && args.length > 0) {
-//            String port = ar
-//        }
+        if (args != null && args.length > 0) {
+            String port = args[0];
+        }
         ExecutorService threadPool = Executors.newFixedThreadPool(3);
         System.out.println("Listen to port 3000: ");
         int defaultPort = 3000;
