@@ -88,7 +88,6 @@ public class HttpClientConnection implements Runnable {
     public boolean checkFile(String fileName) {
         fileName = "static/" + fileName;
         File checkFile = new File(fileName);
-        if (checkFile.isFile()) return true;
-        else return false;
+        return checkFile.isFile();
     }
 }
