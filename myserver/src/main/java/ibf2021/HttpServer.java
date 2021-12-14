@@ -1,10 +1,12 @@
 package ibf2021;
 
-import java.io.*;
-import java.net.Socket;
-import java.net.URLDecoder;
-import java.util.StringTokenizer;
-
 public class HttpServer{
+    int port;
+    public HttpServer(String port) {
+        this.port = Integer.parseInt(port);
+    }
 
+    public void startServer(){
+
+    }
 }
