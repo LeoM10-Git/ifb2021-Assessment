@@ -1,0 +1,25 @@
+.main{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+}
+.img{
+  display: block;
+  height: 50vh;
+}
+.header{
+  text-align: center;
+}
+.text{
+  text-align: center;
+  font-size: 1rem;
+  font-family: sans-serif;
+}
+a{
+  font-size: 1.2rem;
+  font-family: cursive;
+}
+a:hover{
+  color: green;
+}
