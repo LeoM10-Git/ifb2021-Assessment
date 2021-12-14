@@ -44,6 +44,9 @@ public class Main {
                     }
                 }
             }
+        }else {
+            HttpServer httpServer = new HttpServer(userPort, "static/");
+            httpServer.startServer();
         }
     }
 
