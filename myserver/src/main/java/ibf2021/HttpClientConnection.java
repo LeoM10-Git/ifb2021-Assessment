@@ -7,11 +7,13 @@ import java.util.StringTokenizer;
 
 public class HttpClientConnection implements Runnable {
     private Socket socket;
+    private String dir;
     private DataOutputStream outToClient;
     private BufferedReader inFromClient;
 
-    public HttpClientConnection(Socket socket) {
+    public HttpClientConnection(Socket socket, String dir) {
         this.socket = socket;
+        this.dir = dir;
     }
 
     @Override
@@ -86,7 +88,7 @@ public class HttpClientConnection implements Runnable {
     }
 
     public boolean checkFile(String fileName) {
-        fileName = "static/" + fileName;
+        fileName = dir + fileName;
         File checkFile = new File(fileName);
         return checkFile.isFile();
     }

@@ -8,9 +8,11 @@ import java.util.concurrent.Executors;
 
 public class HttpServer{
     String port;
+    String dir;
 
-    public HttpServer(String port) {
+    public HttpServer(String port, String dir) {
         this.port = port;
+        this.dir = dir;
     }
 
     public void startServer() throws IOException {
@@ -21,7 +23,7 @@ public class HttpServer{
 
         while (true) {
             Socket socket = server.accept();
-            HttpClientConnection httpClientConnection = new HttpClientConnection(socket);
+            HttpClientConnection httpClientConnection = new HttpClientConnection(socket, dir);
             threadPool.submit(httpClientConnection);
         }
     }
