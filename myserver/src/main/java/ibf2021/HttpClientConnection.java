@@ -61,7 +61,7 @@ public class HttpClientConnection implements Runnable {
             statusLine = "HTTP/1.1 404 Not Found" + "\r\n";
 
         if (isFile) {
-            fileName = "static/" + responseString;
+            fileName = dir + responseString;
             fin = new FileInputStream(fileName);
             if (fileName.endsWith(".png")){
                 contentTypeLine = "Content-Type: img/png \r\n";
